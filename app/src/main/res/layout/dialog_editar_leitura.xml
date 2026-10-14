@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    dialog_editar_leitura.xml
+    ======================================================================
+    Diálogo de edição de uma leitura do histórico:
+    categoria da tarifa, leitura anterior e leitura atual.
+    O consumo e os valores são recalculados ao salvar.
+    Aberto pelo botão "Editar" de uma linha do histórico.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F201161E"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/dash_editar_leitura_titulo"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtEditarData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/white_50"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/dash_label_categoria"
+        android:textColor="@color/white_50"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/spinnerEditarCategoria"
+        android:entries="@array/spnrCategorias"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input_field"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/dash_label_leitura_anterior"
+        android:textColor="@color/white_50"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/inputEditarAnterior"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="@string/dash_hint_leitura_anterior"
+        android:inputType="numberDecimal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/ink_black"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/dash_label_leitura_atual"
+        android:textColor="@color/white_50"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/inputEditarAtual"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="@string/dash_hint_leitura_atual"
+        android:inputType="numberDecimal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/ink_black"
+        android:textSize="14sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancelarEditarLeitura"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_input_field"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/editar_cancelar"
+            android:textAllCaps="false"
+            android:textColor="@color/dark_teal"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSalvarEditarLeitura"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_btn_submit"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/editar_salvar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>

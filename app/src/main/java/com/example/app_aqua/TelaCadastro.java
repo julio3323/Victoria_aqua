@@ -194,6 +194,15 @@ public class TelaCadastro extends AppCompatActivity {
 
                             }
 
+                        }else{
+
+
+                            Toast.makeText(
+                                    TelaCadastro.this,
+                                    "Erro ao cadastrar. Tente novamente mais tarde.",
+                                    Toast.LENGTH_SHORT
+                            ).show();
+
                         }
 
                     }

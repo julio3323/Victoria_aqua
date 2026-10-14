@@ -6,6 +6,7 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -26,6 +27,12 @@
         <activity
             android:name=".TelaLogin"
             android:exported="false"/>
+        <activity
+            android:name=".TelaPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRelatorios"
+            android:exported="false" />
         <activity
             android:name=".Splash"
             android:exported="true"

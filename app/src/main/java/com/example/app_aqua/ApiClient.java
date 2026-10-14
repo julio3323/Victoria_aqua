@@ -7,8 +7,13 @@ public class ApiClient {
 
     private static Retrofit retrofit;
 
+    // Servidor LOCAL (WAMP, no seu PC).
+    // Requisitos: WAMP aberto (ícone verde) e celular + PC na MESMA rede Wi-Fi.
+    // Se parar de conectar, rode "ipconfig" no PC, veja o Endereço IPv4
+    // e atualize aqui. Para voltar ao servidor remoto (Railway), use:
+    // https://julio-s-repository-production.up.railway.app/
     private static final String BASE_URL =
-            "https://julio-s-repository-production.up.railway.app/";
+            "http://10.181.68.224/app_aqua/";
 
     public static Retrofit getRetrofit(){
 

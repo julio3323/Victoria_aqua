@@ -36,4 +36,7 @@
     <color name="cinza_medio">#E0E0E0</color>
     <color name="transparente">#00000000</color>
 
+    <!-- Vermelho de ações destrutivas (botão "Excluir" do histórico) -->
+    <color name="vermelho_excluir">#B3261E</color>
+
 </resources>

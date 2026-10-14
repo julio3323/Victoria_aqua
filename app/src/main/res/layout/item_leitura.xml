@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_leitura.xml
+    ======================================================================
+    Linha da lista "Histórico de Consumo" do Dashboard.
+    Mostra data, categoria, consumo e total da leitura,
+    com os botões de ícone "Editar" e "Excluir" ao lado direito.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtItemData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/dark_teal"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtItemCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/air_force_blue"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/txtItemConsumo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtItemTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/ink_black"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnItemEditar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_input_field"
+        android:contentDescription="@string/dash_hist_btn_editar"
+        android:focusable="false"
+        android:padding="9dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_lapis"
+        app:tint="@color/dark_teal"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnItemExcluir"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_input_field"
+        android:contentDescription="@string/dash_hist_btn_excluir"
+        android:focusable="false"
+        android:padding="9dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_lixeira"
+        app:tint="@color/vermelho_excluir"/>
+
+</LinearLayout>

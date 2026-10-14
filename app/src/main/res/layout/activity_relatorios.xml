@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_relatorios.xml
+    ======================================================================
+    Tela de Relatórios: resumo das leituras (total, média e maior
+    consumo) e gráfico de barras do consumo por leitura, desenhado
+    pela view customizada GraficoBarras com os dados do WAMP.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_principal"
+    android:orientation="vertical">
+
+    <!-- Conteúdo rolável da tela -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        tools:context=".TelaRelatorios">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:id="@+id/txtRelTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/rel_titulo"
+                android:textColor="@color/ink_black"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtRelSubtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/rel_subtitulo"
+                android:textColor="@color/air_force_blue"
+                android:textSize="14sp"/>
+
+            <!-- ===================== CARD RESUMO ===================== -->
+
+            <LinearLayout
+                android:id="@+id/cardRelResumo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_glass_card"
+                android:elevation="4dp"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rel_stat_total"
+                        android:textColor="@color/dark_teal"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/txtRelTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="0 m³"
+                        android:textColor="@color/ink_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rel_stat_media"
+                        android:textColor="@color/dark_teal"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/txtRelMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="0 m³"
+                        android:textColor="@color/ink_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rel_stat_maior"
+                        android:textColor="@color/dark_teal"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/txtRelMaior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="0 m³"
+                        android:textColor="@color/ink_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ===================== CARD GRÁFICO ===================== -->
+
+            <LinearLayout
+                android:id="@+id/cardRelGrafico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_glass_card"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_grafico"
+                        app:tint="@color/dark_teal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/rel_grafico_titulo"
+                        android:textColor="@color/ink_black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!-- Gráfico de barras desenhado pela view customizada -->
+                <com.example.app_aqua.GraficoBarras
+                    android:id="@+id/graficoBarras"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:layout_marginTop="16dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ===================== BARRA DE NAVEGAÇÃO (ABAS) ===================== -->
+    <LinearLayout
+        android:id="@+id/barraNavegacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/bg_nav_pill"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="6dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="8dp">
+
+        <!-- Aba: Início -->
+        <LinearLayout
+            android:id="@+id/navInicio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_casa"
+                app:tint="@color/air_force_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/nav_inicio"
+                android:textColor="@color/air_force_blue"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Aba: Dashboard -->
+        <LinearLayout
+            android:id="@+id/navDashboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_grafico"
+                app:tint="@color/air_force_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/nav_dashboard"
+                android:textColor="@color/air_force_blue"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Aba: Perfil -->
+        <LinearLayout
+            android:id="@+id/navPerfil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_perfil"
+                app:tint="@color/air_force_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/nav_perfil"
+                android:textColor="@color/air_force_blue"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Aba: Relatórios (tela atual — aba ativa) -->
+        <LinearLayout
+            android:id="@+id/navRelatorios"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_relatorio"
+                app:tint="@color/dark_teal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/nav_relatorios"
+                android:textColor="@color/dark_teal"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

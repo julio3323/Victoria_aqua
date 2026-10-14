@@ -119,6 +119,26 @@
     <string name="dash_filtro_7dias">7 dias</string>
     <string name="dash_filtro_30dias">30 dias</string>
 
+    <!-- ===================== HISTÓRICO: EDITAR / EXCLUIR ===================== -->
+    <string name="dash_hist_btn_editar">Editar</string>
+    <string name="dash_hist_btn_excluir">Excluir</string>
+    <string name="dash_editar_leitura_titulo">Editar Leitura</string>
+    <string name="dash_editar_leitura_data">Data do registro: %1$s</string>
+    <string name="dash_excluir_titulo">Excluir leitura</string>
+    <string name="dash_excluir_mensagem">Tem certeza que deseja excluir esta leitura do histórico?</string>
+    <string name="dash_excluir_cancelar">Cancelar</string>
+    <string name="dash_excluir_confirmar">Excluir</string>
+
+    <!-- ===================== RELATÓRIOS ===================== -->
+    <string name="rel_titulo">Relatórios de Consumo</string>
+    <string name="rel_subtitulo">Análise das suas leituras registradas.</string>
+    <string name="rel_stat_total">Total</string>
+    <string name="rel_stat_media">Média</string>
+    <string name="rel_stat_maior">Maior</string>
+    <string name="rel_grafico_titulo">Consumo por Leitura (m³)</string>
+    <string name="rel_sem_dados">Sem leituras para exibir.</string>
+    <string name="rel_erro_carregar">Não foi possível carregar as leituras.</string>
+
     <!-- ===================== PERFIL ===================== -->
     <string name="perfil_btn_wallpaper">Alterar Wallpaper</string>
     <string name="perfil_nome_carregando">Carregando…</string>
@@ -140,5 +160,46 @@
     <string name="perfil_stat_pontuacao_valor">0 pts</string>
 
     <string name="perfil_atividade_titulo">Atividade Recente</string>
+
+    <!-- ===================== NAVEGAÇÃO (BARRA DE ABAS) ===================== -->
+    <string name="nav_inicio">Início</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="nav_relatorios">Relatórios</string>
+    <string name="perfil_em_breve">Funcionalidade em breve!</string>
+
+    <!-- ===================== CARROSSEL (TELA INÍCIO) ===================== -->
+    <string name="slide2_tag">Medição Inteligente</string>
+    <string name="slide2_titulo">Use o leitor físico</string>
+    <string name="slide2_desc">O leitor instalado na tubulação mede o consumo e envia as leituras automaticamente para o seu painel.</string>
+
+    <!-- ===================== PERFIL: FOTOS (AVATAR / BANNER) ===================== -->
+    <string name="perfil_img_erro_processar">Não foi possível abrir a imagem escolhida.</string>
+    <string name="perfil_img_erro_upload">Erro ao enviar a imagem. Tente novamente.</string>
+
+    <!-- ===================== RECORTE DE FOTOS (AVATAR / BANNER) ===================== -->
+    <string name="recorte_titulo">Ajuste a foto</string>
+    <string name="recorte_dica">Arraste para posicionar e use dois dedos para dar zoom</string>
+    <string name="recorte_cancelar">Cancelar</string>
+    <string name="recorte_confirmar">Confirmar</string>
+
+    <!-- ===================== EDITAR PERFIL (METADADOS) ===================== -->
+    <string name="editar_titulo">Editar Perfil</string>
+    <string name="editar_label_bio">Descrição</string>
+    <string name="editar_label_cidade">Cidade</string>
+    <string name="editar_label_profissao">Profissão</string>
+    <string name="editar_label_website">Website</string>
+    <string name="editar_label_telefone">Telefone</string>
+    <string name="editar_label_data">Data de Nascimento</string>
+    <string name="editar_cancelar">Cancelar</string>
+    <string name="editar_salvar">Salvar</string>
+    <string name="perfil_erro_atualizar">Não foi possível salvar as alterações.</string>
+
+    <!-- ===================== SAIR DA CONTA ===================== -->
+    <string name="perfil_btn_sair">Sair da conta</string>
+    <string name="sair_titulo">Encerrar sessão</string>
+    <string name="sair_mensagem">Tem certeza que deseja sair da sua conta?</string>
+    <string name="sair_cancelar">Cancelar</string>
+    <string name="sair_confirmar">Sair</string>
 
 </resources>

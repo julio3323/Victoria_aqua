@@ -54,6 +54,9 @@ dependencies {
     // RecyclerView
     implementation("androidx.recyclerview:recyclerview:1.4.0")
 
+    // ViewPager2 (carrossel da tela Início)
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+
     // Swipe Refresh
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0")
 
